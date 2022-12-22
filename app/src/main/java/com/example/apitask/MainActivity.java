@@ -9,10 +9,12 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.apitask.Adapter.AdapterShop;
 import com.example.apitask.Model.Shop;
@@ -56,8 +58,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ClearSort = findViewById(R.id.clearOrderBy);
         ClearSort.setOnClickListener(this);
 
+
+
         ButAdd = findViewById(R.id.addNew);
         ButAdd.setOnClickListener(this);
+
+        spinVozYb.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                new GetShop().execute();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
 
         search = findViewById(R.id.Search);
         search.addTextChangedListener(new TextWatcher() {
@@ -91,6 +108,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Search.setText("");
                 spinVozYb.setSelection(0);
                 break;
+            default:
+
+                break;
         }
         }
 
@@ -102,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             try
             {
-                URL url = new URL("https://ngknn.ru:5001/NGKNN/ГромовАН/Api/Shops");
+                URL url = new URL("https://ngknn.ru:5001/NGKNN/ГромовАН/api/Shops?str=" + Search.getText().toString() + "&selectItem=" + spinVozYb.getSelectedItemId());
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
                 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));

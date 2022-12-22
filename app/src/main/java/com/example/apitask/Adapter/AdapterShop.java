@@ -7,6 +7,7 @@ import android.util.Base64;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -62,6 +63,10 @@ public class AdapterShop extends BaseAdapter {
         TextView Count = v.findViewById(R.id.articleNumber);
         TextView Price = v.findViewById(R.id.textPriceItog);
         ImageView imageView = v.findViewById(R.id.imageView);
+        Button deleteShop = v.findViewById(R.id.deleteShop);
+
+        deleteShop.setId(i);
+
         Shop shop = shopList.get(i);
         Title.setText(shop.getTitle());
         Count.setText(Integer.toString(shop.getCount()));

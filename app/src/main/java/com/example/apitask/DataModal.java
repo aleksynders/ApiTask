@@ -9,7 +9,6 @@ public class DataModal {
     private String Image;
 
     public DataModal(String title, int price, int count, String image) {
-        this.ID = ID;
         Title = title;
         Price = price;
         Count = count;
