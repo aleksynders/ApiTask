@@ -1,13 +1,15 @@
 <resources>
     <string name="app_name">ApiTask</string>
     <string name="save_change">Сохранить</string>
-    <string name="delete_record">delete record</string>
     <string name="delete_picture">Удалить картинку</string>
-    <string name="previous">Previous</string>
     <string name="price">Цена</string>
 
     <string name="count">Количество: </string>
     <string name="priceL">Цена: </string>
+
+    <string name="addTitle">Наименование</string>
+    <string name="addPrice">Цена</string>
+    <string name="addCount">Количество</string>
 
     <string name="todo">TODO</string>
     <string name="order_by">Сортировка</string>

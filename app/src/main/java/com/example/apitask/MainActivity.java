@@ -3,10 +3,12 @@ package com.example.apitask;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -25,14 +27,16 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     private AdapterShop adapterShop;
     private List<Shop> shopList = new ArrayList<>();
 
     EditText search;
+    Button ButAdd;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
         ListShop.setAdapter(adapterShop);
 
         new GetShop().execute();
+
+        ButAdd = findViewById(R.id.addNew);
+        ButAdd.setOnClickListener(this);
 
         search = findViewById(R.id.Search);
         search.addTextChangedListener(new TextWatcher() {
@@ -64,6 +71,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onClick(View view) {
+        switch(view.getId()) {
+            case R.id.addNew:
+                startActivity(new Intent(this, AddActivity.class));
+                finish();
+                break;
+        }
+        }
 
 
     private class GetShop extends AsyncTask<Void, Void, String>
