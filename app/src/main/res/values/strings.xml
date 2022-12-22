@@ -6,6 +6,9 @@
     <string name="previous">Previous</string>
     <string name="price">Цена</string>
 
+    <string name="count">Количество: </string>
+    <string name="priceL">Цена: </string>
+
     <string name="todo">TODO</string>
     <string name="order_by">Сортировка</string>
     <string name="search">Поиск</string>

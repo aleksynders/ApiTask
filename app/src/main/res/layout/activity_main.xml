@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/searchET"
+        android:id="@+id/Search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/search"
@@ -26,7 +26,7 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/searchET" />
+        app:layout_constraintTop_toBottomOf="@id/Search" />
 
     <Spinner
         android:id="@+id/orderByItem"
@@ -62,7 +62,7 @@
         />
 
     <ListView
-        android:id="@+id/appsList"
+        android:id="@+id/ListShop"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="1dp"
@@ -84,6 +84,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appsList" />
+        app:layout_constraintTop_toBottomOf="@id/ListShop" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
