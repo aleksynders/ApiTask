@@ -28,15 +28,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/Search" />
 
-    <Spinner
-        android:id="@+id/orderByItem"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:entries="@array/bdNames"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toStartOf="@id/descOrAsc"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sortText" />
 
     <Spinner
         android:id="@+id/descOrAsc"
@@ -45,7 +36,7 @@
         android:entries="@array/ascOrDesc"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/orderByItem"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sortText" />
 
     <android.widget.Button

@@ -34,7 +34,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private List<Shop> shopList = new ArrayList<>();
 
     EditText search;
-    Button ButAdd;
+    Button ButAdd, ClearSort;
+
+    EditText Search;
+    Spinner spinVozYb;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -46,6 +49,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ListShop.setAdapter(adapterShop);
 
         new GetShop().execute();
+
+        Search = findViewById(R.id.Search);
+        spinVozYb = findViewById(R.id.descOrAsc);
+
+        ClearSort = findViewById(R.id.clearOrderBy);
+        ClearSort.setOnClickListener(this);
 
         ButAdd = findViewById(R.id.addNew);
         ButAdd.setOnClickListener(this);
@@ -77,6 +86,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.addNew:
                 startActivity(new Intent(this, AddActivity.class));
                 finish();
+                break;
+            case  R.id.clearOrderBy:
+                Search.setText("");
+                spinVozYb.setSelection(0);
                 break;
         }
         }

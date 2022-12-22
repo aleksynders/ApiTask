@@ -18,13 +18,8 @@
     <string name="add_new">Добавить новое</string>
     <string name="add">Добавить</string>
 
-    <string name="app_image">app image</string>
-    <string-array name="bdNames">
-        <item>Нет</item>
-        <item>Цене</item>
-        <item>Названию</item>
-    </string-array>
     <string-array name="ascOrDesc">
+        <item>По умолчанию</item>
         <item>По возрастанию</item>
         <item>По убыванию</item>
     </string-array>
